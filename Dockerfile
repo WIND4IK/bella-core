@@ -3,7 +3,5 @@ WORKDIR ./
 EXPOSE 3333
 ENV ASPNETCORE_URLS=http://*:3333
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 as runtime
-WORKDIR ./
-COPY --from=build-env ./ .
+COPY . ./
 ENTRYPOINT ["dotnet", "BellaDomain.dll"]
